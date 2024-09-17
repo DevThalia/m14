@@ -15,16 +15,13 @@ function suma1a100(){
 
 function pedraPaper(){
     for(i=1; i<20; i++){
-        switch(i){
-            case i % 3 ==0:
+        if(i %3==0){
             console.log("Pedra")
-            case i % 5 ==0:
+        }else if(i %5==0){
             console.log("Paper")
-            case i % 3 ==0 && i % 5 ==0:
+        }else if(i%3==0 && i%5==0){
             console.log("Tisores")
-            default:
-            console.log(i)
-        }
+        }else console.log(i)
     }
 }
 
@@ -40,21 +37,24 @@ function revertirCadena(cadena){
     console.log(cadenaFinal)
 }
 
-function factorial(n){
-    if(n>0){
+function factorial(n) {
+    if (n === 1 || n === 0) {
         console.log(n)
-    }else {
-        return factorial(n*(n-1))
+        return 1
+    } else {
+        let resultado= n * factorial(n - 1)
+        console.log(resultado)
+        return resultado
     }
 }
 
 function filtrarPositius(array){
+    let newArray=[]
     for(i=0; i<array.length; i++){
-        if(array[i]<0){
-            array.pop(i)
+        if(array[i]>0){
+            newArray.push(array[i])
         }
-        return array
     }
-    console.log(array)
-    
+    console.log(newArray)
+    return newArray
 }
