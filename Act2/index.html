@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>ToDo list</h1>
+    <h2>¿Qué quieres hacer?</h2>
+    <input type="text" id="tareaInput" placeholder="Escribe una tarea" />
+    <button onclick="crearTarea(arrayTareas, document.getElementById('tareaInput').value)">Crear una tarea</button>
+    <button onclick="mostrarTareas(arrayTareas)">Mostrar las tareas</button>
+    <button onclick="eliminarTarea(arrayTareas, document.getElementById('tareaInput').value)">Eliminar una tarea</button>
+</body>
+</html>
