@@ -1,39 +1,43 @@
-const arrayTareas=[]
+const arrayTareas = []
 
-function crearTarea(array,elementoNuevo){
+function crearTarea(array, elementoNuevo) {
     console.log("entra en crear tarea")
-    if(comprobarTarea(array,elementoNuevo)==true){
-        let elemento=document.createElement("p")
-        elemento.innerHTML="La tarea que quieres añadir ya existe"
-        document.body.appendChild(elemento)
-    }else{
+    if (comprobarTarea(array, elementoNuevo) == true) {
+        alert = "La tarea que quieres añadir ya existe"
+    } else {
         array.push(elementoNuevo)
-        //mostrarTareas(array)
+        mostrarTareas(array)
     }
     return array
 }
 
-function mostrarTareas(array){
-    console.log("entra en mostrar tareas")
-    array.forEach(tarea => {
-        let elemento = document.createElement("p");
-        elemento.classList.add("tarea");
-        elemento.innerHTML = tarea;
-        document.body.appendChild(elemento);
-    });
+
+function mostrarTareas(array) {
+    let contenedorTareas = document.getElementById("contenedor-tareas")
+    contenedorTareas.innerHTML = ""
+    array.forEach((tarea, index) => {
+        let elemento = document.createElement("li")
+        elemento.classList.add("tarea")
+        elemento.innerHTML = tarea
+        let botonBorrar = document.createElement("button")
+        botonBorrar.innerHTML = "Borrar"
+        botonBorrar.classList.add("boton-borrar")
+        botonBorrar.addEventListener("click", () => {
+            eliminarTarea(array, tarea)
+        })
+        elemento.appendChild(botonBorrar)
+        contenedorTareas.appendChild(elemento)
+    })
 }
 
-function eliminarTarea(array,tareaEliminar){
-    let index=array.indexOf(tareaEliminar)
-    if(index>-1){
-        array.splice(index,1)
-    }else{
-        let elemento = document.createElement("p");
-        elemento.innerHTML = "No es posible eliminar";
-        document.body.appendChild(elemento);
+
+function eliminarTarea(array, tareaEliminar) {
+    let index = array.indexOf(tareaEliminar)
+    if (index > -1) {
+        array.splice(index, 1)
     }
 }
 
-function comprobarTarea(array,tarea){
+function comprobarTarea(array, tarea) {
     return array.includes(tarea)
 }
