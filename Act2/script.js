@@ -37,6 +37,7 @@ function eliminarTarea(array, tareaEliminar) {
     let index = array.indexOf(tareaEliminar)
     if (index === 0) {
         array.splice(index, 1)
+        
         console.log(array);
         mostrarTareas(array)
     }
