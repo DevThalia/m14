@@ -7,14 +7,14 @@ function compararNumeros(a,b){
 
 function suma1a100(){
     let suma=0
-    for(i=0; i<100; i++){
-        suma=suma+i
+    for(i=0; i<=100; i++){
+        suma+=i
     }
     console.log(suma)
 }
 
 function pedraPaper(){
-    for(i=1; i<20; i++){
+    for(i=1; i<=20; i++){
         if(i %3==0){
             console.log("Pedra")
         }else if(i %5==0){

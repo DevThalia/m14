@@ -11,11 +11,10 @@ function crearTarea(array, elementoNuevo) {
     return array
 }
 
-
 function mostrarTareas(array) {
     let contenedorTareas = document.getElementById("contenedor-tareas")
     contenedorTareas.innerHTML = ""
-    array.forEach((tarea, index) => {
+    array.forEach((tarea) => {
         let elemento = document.createElement("li")
         elemento.classList.add("tarea")
         elemento.innerHTML = tarea
@@ -28,12 +27,16 @@ function mostrarTareas(array) {
         elemento.appendChild(botonBorrar)
         contenedorTareas.appendChild(elemento)
     })
+    console.log(array);
 }
 
 
 function eliminarTarea(array, tareaEliminar) {
+    console.log(array);
+    console.log(tareaEliminar);
     let index = array.indexOf(tareaEliminar)
-    if (index > -1) {
+    console.log(index);
+    if (index === 0) {
         array.splice(index, 1)
     }
 }
