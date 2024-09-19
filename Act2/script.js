@@ -1,7 +1,7 @@
 const arrayTareas = []
 
 function crearTarea(array, elementoNuevo) {
-    console.log("entra en crear tarea")
+    //console.log("entra en crear tarea")
     if (comprobarTarea(array, elementoNuevo) == true) {
         alert = "La tarea que quieres añadir ya existe"
     } else {
@@ -27,17 +27,18 @@ function mostrarTareas(array) {
         elemento.appendChild(botonBorrar)
         contenedorTareas.appendChild(elemento)
     })
-    console.log(array);
+    //console.log(array);
 }
 
 
 function eliminarTarea(array, tareaEliminar) {
-    console.log(array);
-    console.log(tareaEliminar);
+    //console.log(array);
+    //console.log(tareaEliminar);
     let index = array.indexOf(tareaEliminar)
-    console.log(index);
     if (index === 0) {
         array.splice(index, 1)
+        console.log(array);
+        mostrarTareas(array)
     }
 }
 
