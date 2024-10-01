@@ -10,24 +10,25 @@ function crearTarea(array, elementoNuevo) {
     }
     return array
 }
-function mostrarTareas(array) {
-    let contenedorTareas = document.getElementById("contenedor-tareas");
-    contenedorTareas.innerHTML = "";
-    array.forEach(function(tarea) {
-        let elemento = document.createElement("li");
-        elemento.classList.add("tarea");
-        elemento.innerHTML = tarea;
-        let botonBorrar = document.createElement("button");
-        botonBorrar.innerHTML = "Borrar";
-        botonBorrar.classList.add("boton-borrar");
-        botonBorrar.addEventListener("click", function() {
-            eliminarTarea(array, tarea);
-        });
-        elemento.appendChild(botonBorrar);
-        contenedorTareas.appendChild(elemento);
-    });
-}
 
+function mostrarTareas(array) {
+    let contenedorTareas = document.getElementById("contenedor-tareas")
+    contenedorTareas.innerHTML = ""
+    array.forEach((tarea) => {
+        let elemento = document.createElement("li")
+        elemento.classList.add("tarea")
+        elemento.innerHTML = tarea
+        let botonBorrar = document.createElement("button")
+        botonBorrar.innerHTML = "Borrar"
+        botonBorrar.classList.add("boton-borrar")
+        botonBorrar.addEventListener("click", () => {
+            eliminarTarea(array, tarea)
+        })
+        elemento.appendChild(botonBorrar)
+        contenedorTareas.appendChild(elemento)
+    })
+    //console.log(array);
+}
 
 
 function eliminarTarea(array, tareaEliminar) {
