@@ -58,20 +58,36 @@ function ejercicio5() {
 
     // Utilitza reduce per calcular la mitjana
 
-    let newArray = notes.reduce(function(suma,num){
-        return suma+num
+    let newArray = notes.reduce(function (suma, num) {
+        return suma + num
     })
 
-    let media=newArray/notes.length
+    let media = newArray / notes.length
 
     // Imprimeix el resultat
     console.log(media)
 }
 
-function ejercicio6(){
-    
+function ejercicio6() {
+    // Escriu la funció per crear l'objecte producte
+    let product= new Object({
+        nom:"Portàtil",
+        preu:950,
+        quantitat:3
+    })
+    // Exemple de sortida: { nom: "Portàtil", preu: 950, quantitat: 3 }
+    console.log(product);
 }
 
-function ejercicio7(){
-
-}
+function ejercicio7() {
+    let cotxe = {
+        marca: 'Tesla',
+        model: 'Model S',
+        preu: 80000
+    }
+    // Afegeix la propietat 'any' aquí
+    //cotxe['any']=1998
+    Object.assign(cotxe,{any:2023})
+    // Imprimeix l'objecte actualitzat
+    console.log(cotxe);
+}   
